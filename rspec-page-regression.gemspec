@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport"
   spec.add_dependency "oily_png"
   spec.add_dependency "poltergeist"
+  spec.add_dependency "rouge"
   spec.add_dependency "rspec", "~> 3.0"
   spec.add_dependency "which_works"
 
