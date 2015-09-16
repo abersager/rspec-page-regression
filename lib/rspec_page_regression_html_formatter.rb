@@ -88,6 +88,7 @@ def os
   end
 
   def generate_baseline_message visual_comparison
+    return '' if visual_comparison.nil?
     formatter = Rouge::Formatters::HTML.new(css_class: 'highlight')
     lexer = Rouge::Lexers::Shell.new
     message = "$ mv #{visual_comparison["test"]} #{visual_comparison["expected"]}"
