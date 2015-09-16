@@ -107,12 +107,16 @@
                               <table>
                                 <thead>
                                   <th>Actual</th>
-                                  <th>Difference</th>
+                                  <% if example.exception.visual_comparison["difference"] %>
+                                    <th>Difference</th>
+                                  <% end %>
                                   <th>Expected</th>
                                 </thead>
                                 <tbody>
                                   <td><img src='../../<%= example.exception.visual_comparison["test"] %>'/></td>
-                                  <td><img src='../../<%= example.exception.visual_comparison["difference"] %>'/></td>
+                                  <% if example.exception.visual_comparison["difference"] %>
+                                    <td><img src='../../<%= example.exception.visual_comparison["difference"] %>'/></td>
+                                  <% end %>
                                   <td><img src='../../<%= example.exception.visual_comparison["expected"] %>'/></td>
                                 </tbody>
                               </table>
@@ -170,6 +174,9 @@
   }
   div.visual-comparison.expanded img {
     width: auto;
+  }
+  div.visual-comparison td {
+    vertical-align: top;
   }
   form.baseline label {
     font-size: 14px;

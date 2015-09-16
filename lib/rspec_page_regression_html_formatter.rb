@@ -76,7 +76,7 @@ def os
   end
 
   def generate_visual_comparison
-    return unless @message.match "Test image does not match expected image"
+    return unless @message.match /Test image (?:does not match expected image|size [\dx]+ does not match expectation)/
 
     paths = @message.scan /(?:tmp\/)?spec\/[^ ]+/
     result = paths.map do |path|
